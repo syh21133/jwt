@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 @Getter
 @Entity
@@ -27,11 +28,12 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private UserRole userRole;
 
-	public User(String userName, String password, String nickName,UserRole userRole) {
+	public User(String userName, String password, String nickName) {
 		this.userName = userName;
 		this.password = password;
 		this.nickName = nickName;
-		this.userRole = userRole;
+		this.userRole = UserRole.USER;
+
 	}
 
 	public void updateAuthorization(UserRole userRole) {

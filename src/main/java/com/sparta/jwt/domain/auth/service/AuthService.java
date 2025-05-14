@@ -34,13 +34,11 @@ public class AuthService {
 			throw new GlobalException(USER_ALREADY_EXISTS);
 		}
 		String encodedPassword = passwordEncoder.encode(signupRequest.getPassword());
-		UserRole userRole = UserRole.of(signupRequest.getUserRole());
 
 		User newUser = new User(
 			signupRequest.getUserName(),
 			encodedPassword,
-			signupRequest.getNickName(),
-			userRole
+			signupRequest.getNickName()
 		);
 		User savedUser = userRepository.save(newUser);
 
