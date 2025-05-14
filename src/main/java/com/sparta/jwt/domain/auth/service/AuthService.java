@@ -1,5 +1,7 @@
 package com.sparta.jwt.domain.auth.service;
 
+import static com.sparta.jwt.config.exception.enums.ExceptionCode.*;
+
 import com.sparta.jwt.config.JwtUtil;
 import com.sparta.jwt.domain.auth.dto.request.SigninRequest;
 import com.sparta.jwt.domain.auth.dto.request.SignupRequest;
